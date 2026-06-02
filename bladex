@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slayt 11 - Finansal Fizibilite & Gelir Modeli</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- KaTeX for Math Formula Rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0b0f19;
+            color: #f1f5f9;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-6 md:p-12 select-none">
+
+    <!-- SLIDE 11 CONTAINER -->
+    <div class="w-full max-w-6xl bg-slate-950/40 border border-slate-800 p-8 rounded-3xl space-y-8 backdrop-blur">
+        
+        <!-- Header -->
+        <div class="space-y-1">
+            <span class="text-green-500 text-xs font-semibold tracking-wider uppercase">Finansal Fizibilite</span>
+            <h2 class="text-3xl lg:text-4xl font-extrabold text-white">4 Kanallı Sürdürülebilir Gelir Modeli ve Başa Baş Simülatörü</h2>
+        </div>
+
+        <div class="grid lg:grid-cols-12 gap-8 items-start">
+            <!-- Column Left: Detailed 4 Revenue Channels -->
+            <div class="lg:col-span-4 space-y-3">
+                <h3 class="text-xs font-bold uppercase text-slate-400 tracking-wider flex items-center gap-1.5">
+                    <i class="fa-solid fa-sack-dollar text-blue-500"></i> Gelir Kanallarımız (Revenue Model)
+                </h3>
+                
+                <div class="space-y-2 text-xs">
+                    <!-- Channel 1 -->
+                    <div class="bg-slate-900/50 border border-slate-800/80 p-3.5 rounded-xl flex items-start gap-3">
+                        <span class="text-blue-400 mt-0.5 text-sm"><i class="fa-solid fa-box-open"></i></span>
+                        <div>
+                            <h5 class="font-bold text-white text-[11px] mb-0.5">1. Doğrudan B2B Modül Satışı (OEM)</h5>
+                            <p class="text-[10px] text-slate-400 leading-tight">Gövde ve akıllı güç kartımızın, saha izleme ve IoT kabini üreten entegratör firmalara doğrudan toplu satışı (Öngörülen: ~25.000 TL / adet).</p>
+                        </div>
+                    </div>
+                    <!-- Channel 2 -->
+                    <div class="bg-slate-900/50 border border-slate-800/80 p-3.5 rounded-xl flex items-start gap-3">
+                        <span class="text-cyan-400 mt-0.5 text-sm"><i class="fa-solid fa-arrows-spin"></i></span>
+                        <div>
+                            <h5 class="font-bold text-white text-[11px] mb-0.5">2. Entegratör Kiralama Modeli (OpEx)</h5>
+                            <p class="text-[10px] text-slate-400 leading-tight">Yüksek adetli istasyon projelerinde, entegratörlere donanımı kiraya vererek aylık "kesintisiz güç garantili" servis geliri elde etmek.</p>
+                        </div>
+                    </div>
+                    <!-- Channel 3 -->
+                    <div class="bg-slate-900/50 border border-slate-800/80 p-3.5 rounded-xl flex items-start gap-3">
+                        <span class="text-green-400 mt-0.5 text-sm"><i class="fa-solid fa-file-signature"></i></span>
+                        <div>
+                            <h5 class="font-bold text-white text-[11px] mb-0.5">3. Fikri Mülkiyet (IP) Lisanslama</h5>
+                            <p class="text-[10px] text-slate-400 leading-tight">Global meteoroloji ve tarım sensör üreticilerine, patentli jeneratör ve aero-elastik sönümleme algoritmalarımızın lisanslanması.</p>
+                        </div>
+                    </div>
+                    <!-- Channel 4 -->
+                    <div class="bg-slate-900/50 border border-slate-800/80 p-3.5 rounded-xl flex items-start gap-3">
+                        <span class="text-purple-400 mt-0.5 text-sm"><i class="fa-solid fa-cloud-bolt"></i></span>
+                        <div>
+                            <h5 class="font-bold text-white text-[11px] mb-0.5">4. Akıllı Güç İzleme SaaS Yazılımı</h5>
+                            <p class="text-[10px] text-slate-400 leading-tight">Güç kartımızdaki IoT çipi ile buluta aktarılan rüzgar tahmini, batarya sağlık analitiği (SOH) ve şarj durumu takibi için yazılım aboneliği.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Column Middle: Simulator Parameters -->
+            <div class="lg:col-span-4 bg-slate-900 border border-slate-800 p-6 rounded-2xl space-y-5">
+                <h4 class="text-xs font-bold uppercase text-slate-400 tracking-wider flex items-center gap-2">
+                    <i class="fa-solid fa-sliders text-blue-500"></i> Simülatör Parametreleri
+                </h4>
+
+                <div class="space-y-4 text-xs">
+                    <!-- Unit Sales Price -->
+                    <div class="space-y-1.5">
+                        <label class="text-slate-400 flex justify-between">
+                            <span>Birim Satış Fiyatı (TL):</span>
+                            <span class="font-bold text-white font-mono" id="val-fiyat">25.000 TL</span>
+                        </label>
+                        <input type="range" min="15000" max="50000" step="1000" value="25000" id="input-fiyat" oninput="recalcBreakEven()" class="w-full accent-blue-500 h-1 bg-slate-800 rounded">
+                    </div>
+                    <!-- Variable Cost -->
+                    <div class="space-y-1.5">
+                        <label class="text-slate-400 flex justify-between">
+                            <span>Birim Değişken Maliyet (TL):</span>
+                            <span class="font-bold text-white font-mono" id="val-maliyet">12.500 TL</span>
+                        </label>
+                        <input type="range" min="8000" max="25000" step="500" value="12500" id="input-maliyet" oninput="recalcBreakEven()" class="w-full accent-blue-500 h-1 bg-slate-800 rounded">
+                    </div>
+                    <!-- Fixed Cost -->
+                    <div class="space-y-1.5">
+                        <label class="text-slate-400 flex justify-between">
+                            <span>Yıllık Toplam Sabit Maliyet (TL):</span>
+                            <span class="font-bold text-white font-mono" id="val-sabit">1.500.000 TL</span>
+                        </label>
+                        <input type="range" min="500000" max="3000000" step="100000" value="1500000" id="input-sabit" oninput="recalcBreakEven()" class="w-full accent-blue-500 h-1 bg-slate-800 rounded">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Column Right: Dynamic Break-even output -->
+            <div class="lg:col-span-4 space-y-5">
+                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl space-y-4">
+                    <h3 class="text-xs font-bold uppercase text-slate-400 tracking-wider">Mühendislik Başa Baş Noktası Formülü</h3>
+                    <div class="bg-slate-950 p-5 rounded-xl border border-slate-800 text-center text-xs font-mono">
+                        <span class="text-slate-400">Başa Baş Adedi = Sabit Maliyet / (Satış Fiyatı - Değişken Maliyet)</span>
+                        <div class="py-2">
+                            <!-- KaTeX Math Formula -->
+                            <div id="math-formula">$$\text{Başa Baş} = \frac{F_{\text{sabit}}}{P_{\text{satış}} - V_{\text{değişken}}}$$</div>
+                        </div>
+                        <p class="text-3xl font-extrabold text-green-400 mt-2" id="result-be">120 Adet</p>
+                        <p class="text-[10px] text-slate-500 mt-1">Bu satış hacminden sonra her ek donanım doğrudan net kar hanesine yazılır.</p>
+                    </div>
+                </div>
+
+                <!-- Growth projection -->
+                <div class="bg-slate-900/30 border border-slate-800 p-5 rounded-2xl flex items-center justify-between text-[11px]">
+                    <div>
+                        <p class="font-bold text-white mb-0.5">Yıl 1 Hedefi</p>
+                        <p class="text-slate-400 font-mono">200 Adet Satış</p>
+                    </div>
+                    <div class="h-8 w-[1px] bg-slate-800"></div>
+                    <div>
+                        <p class="font-bold text-white mb-0.5">Yıl 3 Hedefi</p>
+                        <p class="text-slate-400 font-mono">1.000 Adet Satış</p>
+                    </div>
+                    <div class="h-8 w-[1px] bg-slate-800"></div>
+                    <div>
+                        <p class="font-bold text-white mb-0.5">İhracat Hedefi (Yıl 3)</p>
+                        <p class="text-slate-400 font-mono">180.000 USD</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Calculations Script -->
+    <script>
+        window.onload = function() {
+            // Render Math formulas safely
+            if (typeof renderMathInElement === "function") {
+                renderMathInElement(document.body, {
+                    delimiters: [
+                        {left: '$$', right: '$$', display: true},
+                        {left: '$', right: '$', display: false}
+                    ],
+                    throwOnError : false
+                });
+            }
+            recalcBreakEven();
+        };
+
+        function recalcBreakEven() {
+            const fiyat = parseInt(document.getElementById('input-fiyat').value);
+            const maliyet = parseInt(document.getElementById('input-maliyet').value);
+            const sabit = parseInt(document.getElementById('input-sabit').value);
+
+            // Update UI Labels
+            document.getElementById('val-fiyat').innerText = `${fiyat.toLocaleString('tr-TR')} TL`;
+            document.getElementById('val-maliyet').innerText = `${maliyet.toLocaleString('tr-TR')} TL`;
+            document.getElementById('val-sabit').innerText = `${sabit.toLocaleString('tr-TR')} TL`;
+
+            // Calculate Break-even
+            const margin = fiyat - maliyet;
+            const resultElement = document.getElementById('result-be');
+            
+            if (margin <= 0) {
+                resultElement.innerText = "Zarar!";
+                resultElement.className = "text-3xl font-extrabold text-red-500 mt-2 animate-pulse";
+                return;
+            } else {
+                resultElement.className = "text-3xl font-extrabold text-green-400 mt-2";
+            }
+
+            const beCount = Math.ceil(sabit / margin);
+            resultElement.innerText = `${beCount} Adet`;
+        }
+    </script>
+</body>
+</html>
